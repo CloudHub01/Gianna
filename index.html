@@ -3,242 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: linear-gradient(135deg, #ffe4f2, #fff7d6);
-            color: #5b3b40;
-        }
-
-        .card {
-            max-width: 600px;
-            margin: 50px auto;
-            background: #ffffffcc;
-            border-radius: 24px;
-            padding: 32px 28px 36px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-            border: 2px solid #ffc6da;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Coquette bows and hearts */
-        .bow {
-            position: absolute;
-            top: -24px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 40px;
-            background: #ff9ebe;
-            border-radius: 40px 40px 10px 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-
-        .bow::before,
-        .bow::after {
-            content: "";
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: #ffc6da;
-            border-radius: 50%;
-            top: 0;
-        }
-
-        .bow::before {
-            left: -26px;
-        }
-
-        .bow::after {
-            right: -26px;
-        }
-
-        .heart {
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            background: #ff7da5;
-            transform: rotate(-45deg);
-        }
-
-        .heart::before,
-        .heart::after {
-            content: "";
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            background: #ff7da5;
-            border-radius: 50%;
-        }
-
-        .heart::before {
-            top: -9px;
-            left: 0;
-        }
-
-        .heart::after {
-            left: 9px;
-            top: 0;
-        }
-
-        .heart.left {
-            top: 20px;
-            left: 18px;
-        }
-
-        .heart.right {
-            top: 20px;
-            right: 18px;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 2.4rem;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            color: #ff4b8a;
-            letter-spacing: 1px;
-        }
-
-        .subtitle {
-            text-align: center;
-            font-size: 0.95rem;
-            color: #a66f7b;
-            margin-bottom: 24px;
-        }
-
-        .fries-emoji {
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .message p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin: 8px 0;
-        }
-
-        .highlight {
-            background: #fff3fa;
-            border-radius: 12px;
-            padding: 10px 14px;
-            border: 1px dashed #ffb3cc;
-            margin-top: 16px;
-        }
-
-        .signature {
-            margin-top: 20px;
-            font-style: italic;
-            text-align: right;
-            color: #b07884;
-        }
-
-        /* Cute fries box at the bottom */
-        .fries-box {
-            margin: 26px auto 0;
-            width: 120px;
-            height: 90px;
-            position: relative;
-        }
-
-        .fries {
-            position: absolute;
-            bottom: 45px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 4px;
-        }
-
-        .fry {
-            width: 14px;
-            height: 55px;
-            background: linear-gradient(180deg, #ffd36a, #ffb347);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-        }
-
-        .fry:nth-child(2) {
-            height: 60px;
-            transform: translateY(-4px) rotate(-4deg);
-        }
-
-        .fry:nth-child(3) {
-            height: 58px;
-            transform: translateY(-2px) rotate(3deg);
-        }
-
-        .box {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 110px;
-            height: 55px;
-            background: linear-gradient(135deg, #ff4b8a, #ff799f);
-            border-radius: 18px 18px 10px 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border: 2px solid #ffb6cf;
-        }
-
-        .box::before {
-            content: "FRIES & VIBES";
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.55rem;
-            letter-spacing: 1px;
-            color: #fff7fb;
-        }
-
-        @media (max-width: 480px) {
-            .card {
-                margin: 30px 16px;
-                padding: 26px 18px 30px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <title>Happy Birthday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="design.css">
 </head>
 <body>
-    <div class="card">
-        <div class="bow"></div>
-        <div class="heart left"></div>
-        <div class="heart right"></div>
+    <header>
+        <h1>To the most beautiful girl</h1>
+    </header>
+    <main>
+        <p>Happy birthday, Gianna! I know we've only been talking for a few days and we're still getting to know each other, but my wish for you is to stay strong no matter what challenges life throws your way. Just remember, you'll never be alone. Happy birthday, pretty girl!</p>
+    </main>
+    
+    <button id="friesBtn" class="fries-button">Click for Fries!</button>
+    
+    <div id="friesContainer" class="fries-container"></div>
 
-        <div class="fries-emoji">🍟</div>
-        <h1>Happy Birthday, Cutie!</h1>
-        <div class="subtitle">soft hearts, pink bows, and unlimited fries energy</div>
-
-        <div class="message">
-            <p>Dear Friend,</p>
-            <p>Wishing you the **crispiest** kind of happiness today – golden, warm, and overflowing like a fresh box of fries.</p>
-            <p>May your year be filled with soft moments, pretty little surprises, and people who treat you like their favorite order.</p>
-
-            <div class="highlight">
-                <p>Here’s to more late-night cravings, shared stories, and laughter that feels like extra fries at the bottom of the bag.</p>
-            </div>
-
-            <p class="signature">With love and fries,<br>Someone who’s glad you exist 🍟💗</p>
-        </div>
-
-        <div class="fries-box">
-            <div class="fries">
-                <div class="fry"></div>
-                <div class="fry"></div>
-                <div class="fry"></div>
-            </div>
-            <div class="box"></div>
-        </div>
+    <div id="popupContainer" class="popup-container">
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjdzeDNpN29tOHlna3NjaDliNHB6NWZqZjNqZ2ZoYWxzcXZndHp5dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nNfRs2Unc5VxI3VnQB/giphy.gif" alt="popup">
     </div>
+
+    <script>
+        // Popup timer
+        setTimeout(() => {
+            const popup = document.getElementById('popupContainer');
+            popup.classList.add('show');
+        }, 10000);
+        
+        // Popup close when clicked
+        document.getElementById('popupContainer').addEventListener('click', function() {
+            this.classList.remove('show');
+        });
+
+        const friesBtn = document.getElementById('friesBtn');
+        const friesContainer = document.getElementById('friesContainer');
+        let clickCount = 0;
+
+        friesBtn.addEventListener('click', function() {
+            clickCount++;
+            
+            // Create falling fries
+            const fry = document.createElement('img');
+            fry.className = 'fry';
+            fry.src = 'https://png.pngtree.com/png-clipart/20220429/original/pngtree-french-fries-vector-cartoon-illustration-png-image_7579343.png';
+            fry.style.left = Math.random() * 90 + '%';
+            friesContainer.appendChild(fry);
+
+            setTimeout(() => {
+                fry.remove();
+            }, 3000);
+            
+            // Create or move the side gif
+            if (clickCount === 1) {
+                const sideGif = document.createElement('img');
+                sideGif.className = 'fry-moving';
+                sideGif.id = 'moving-gif';
+                sideGif.src = 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXFtYXRxN3A3NXRwYXRlcTRteHU5b3pneWNpcDZzamRqYm1wNnowOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MqfYhMK7vCKDZWCnlq/giphy.gif';
+                sideGif.style.width = '80px';
+                sideGif.style.height = '80px';
+                friesContainer.appendChild(sideGif);
+                moveGif();
+            } else {
+                const existingGif = document.getElementById('moving-gif');
+                if (existingGif) {
+                    moveGif();
+                }
+            }
+            
+            function moveGif() {
+                const gif = document.getElementById('moving-gif');
+                if (gif) {
+                    const randomX = Math.random() * (window.innerWidth - 100);
+                    const randomY = Math.random() * (window.innerHeight - 100);
+                    gif.style.left = randomX + 'px';
+                    gif.style.top = randomY + 'px';
+                    gif.style.animation = 'moveIn 0.5s ease-out';
+                }
+            }
+        });
+    </script>
 </body>
-</html>
+
