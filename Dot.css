@@ -1,244 +1,266 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: linear-gradient(135deg, #ffe4f2, #fff7d6);
-            color: #5b3b40;
-        }
+body {
+    background: linear-gradient(to bottom, #fce4ec, #90caf9);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
-        .card {
-            max-width: 600px;
-            margin: 50px auto;
-            background: #ffffffcc;
-            border-radius: 24px;
-            padding: 32px 28px 36px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-            border: 2px solid #ffc6da;
-            position: relative;
-            overflow: hidden;
-        }
+body::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 150px;
+    height: 150px;
+    background-image: url('https://images.pexels.com/photos/4109237/pexels-photo-4109237.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    animation: float 6s ease-in-out infinite;
+    border: 3px solid #e91e63;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
 
-        /* Coquette bows and hearts */
-        .bow {
-            position: absolute;
-            top: -24px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 40px;
-            background: #ff9ebe;
-            border-radius: 40px 40px 10px 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
+body::after {
+    content: '';
+    position: absolute;
+    top: 60%;
+    right: 5%;
+    width: 130px;
+    height: 130px;
+    background-image: url('https://images.pexels.com/photos/15754939/pexels-photo-15754939.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    animation: float 6s ease-in-out infinite reverse;
+    border: 3px solid #e91e63;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
 
-        .bow::before,
-        .bow::after {
-            content: "";
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: #ffc6da;
-            border-radius: 50%;
-            top: 0;
-        }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .bow::before {
-            left: -26px;
-        }
+header {
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
 
-        .bow::after {
-            right: -26px;
-        }
+h1 {
+    font-family: 'Caveat', cursive;
+    color: #e91e63;
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-out 0.5s both, pulse 3s ease-in-out infinite 2s;
+}
 
-        .heart {
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            background: #ff7da5;
-            transform: rotate(-45deg);
-        }
+main {
+    max-width: 600px;
+    margin: 20px 0;
+    animation: fadeIn 1.5s ease-out 1s both;
+    border: 2px solid #e91e63;
+    border-radius: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .heart::before,
-        .heart::after {
-            content: "";
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            background: #ff7da5;
-            border-radius: 50%;
-        }
+main p {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
 
-        .heart::before {
-            top: -9px;
-            left: 0;
-        }
+footer {
+    margin-top: 40px;
+}
 
-        .heart::after {
-            left: 9px;
-            top: 0;
-        }
+footer p {
+    font-size: 1em;
+    color: #888;
+    margin: 0;
+}
 
-        .heart.left {
-            top: 20px;
-            left: 18px;
-        }
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
 
-        .heart.right {
-            top: 20px;
-            right: 18px;
-        }
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
 
-        h1 {
-            text-align: center;
-            font-size: 2.4rem;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            color: #ff4b8a;
-            letter-spacing: 1px;
-        }
+@keyframes fallDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(500px) rotate(360deg);
+    }
+}
 
-        .subtitle {
-            text-align: center;
-            font-size: 0.95rem;
-            color: #a66f7b;
-            margin-bottom: 24px;
-        }
+.fries-button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.3em;
+    background: linear-gradient(135deg, #e91e63, #ff69b4);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: fadeIn 1.5s ease-out 1.5s both;
+}
 
-        .fries-emoji {
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 10px;
-        }
+.fries-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
 
-        .message p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin: 8px 0;
-        }
+.fries-button:active {
+    transform: scale(0.98);
+}
 
-        .highlight {
-            background: #fff3fa;
-            border-radius: 12px;
-            padding: 10px 14px;
-            border: 1px dashed #ffb3cc;
-            margin-top: 16px;
-        }
+.fries-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
 
-        .signature {
-            margin-top: 20px;
-            font-style: italic;
-            text-align: right;
-            color: #b07884;
-        }
+.fry {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    animation: fallDown 3s ease-in forwards;
+}
 
-        /* Cute fries box at the bottom */
-        .fries-box {
-            margin: 26px auto 0;
-            width: 120px;
-            height: 90px;
-            position: relative;
-        }
+@keyframes moveIn {
+    0% {
+        opacity: 0.7;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
-        .fries {
-            position: absolute;
-            bottom: 45px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 4px;
-        }
+.fry-moving {
+    position: fixed;
+    object-fit: contain;
+    z-index: 100;
+}
 
-        .fry {
-            width: 14px;
-            height: 55px;
-            background: linear-gradient(180deg, #ffd36a, #ffb347);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-        }
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
 
-        .fry:nth-child(2) {
-            height: 60px;
-            transform: translateY(-4px) rotate(-4deg);
-        }
+.popup-container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    border: 2px solid #e91e63;
+    border-radius: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .fry:nth-child(3) {
-            height: 58px;
-            transform: translateY(-2px) rotate(3deg);
-        }
+.popup-container.show {
+    opacity: 1;
+    pointer-events: all;
+    animation: popIn 0.6s ease-out;
+}
 
-        .box {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 110px;
-            height: 55px;
-            background: linear-gradient(135deg, #ff4b8a, #ff799f);
-            border-radius: 18px 18px 10px 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border: 2px solid #ffb6cf;
-        }
+.popup-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    cursor: pointer;
+}
 
-        .box::before {
-            content: "FRIES & VIBES";
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.55rem;
-            letter-spacing: 1px;
-            color: #fff7fb;
-        }
-
-        @media (max-width: 480px) {
-            .card {
-                margin: 30px 16px;
-                padding: 26px 18px 30px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <div class="bow"></div>
-        <div class="heart left"></div>
-        <div class="heart right"></div>
-
-        <div class="fries-emoji">🍟</div>
-        <h1>Happy Birthday, Cutie!</h1>
-        <div class="subtitle">soft hearts, pink bows, and unlimited fries energy</div>
-
-        <div class="message">
-            <p>Dear Friend,</p>
-            <p>Wishing you the **crispiest** kind of happiness today – golden, warm, and overflowing like a fresh box of fries.</p>
-            <p>May your year be filled with soft moments, pretty little surprises, and people who treat you like their favorite order.</p>
-
-            <div class="highlight">
-                <p>Here’s to more late-night cravings, shared stories, and laughter that feels like extra fries at the bottom of the bag.</p>
-            </div>
-
-            <p class="signature">With love and fries,<br>Someone who’s glad you exist 🍟💗</p>
-        </div>
-
-        <div class="fries-box">
-            <div class="fries">
-                <div class="fry"></div>
-                <div class="fry"></div>
-                <div class="fry"></div>
-            </div>
-            <div class="box"></div>
-        </div>
-    </div>
-</body>
-</html>
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .popup-container {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .popup-container img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    body::before,
+    body::after {
+        display: none;
+    }
+    
+    main {
+        padding: 15px;
+    }
+    
+    .fries-button {
+        padding: 10px 20px;
+        font-size: 1.1em;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    main p {
+        font-size: 1.3em;
+    }
+}
